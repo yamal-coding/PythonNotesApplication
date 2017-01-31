@@ -1,17 +1,20 @@
+from Observer import Observer
 
-def class ConsoleView:
+class ConsoleView(Observer):
+
 	def __init__(self, controller):
+		self.__notes = []
 		self.__controller = controller
-		#TODO
+		self.__controller.addObserver(self)
 
 	def printOptions():
-		#TODO
+		print("Options:  1-Add  2-Delete  3-Edit")
 
 	def printNotes():
-		#TODO
+		for n in self.__notes
 
 	def onNewNote():
-		#TODO
+		self.__notes.append
 
 	def onNoteEdited():
 		#TODO
