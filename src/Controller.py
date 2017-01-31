@@ -4,6 +4,9 @@ class Controller:
 	def __init__(self, modelo):
 		self.__modelo = modelo
 
+	def addObserver():
+		#TODO
+
 	def loadNotes(self):
 		self.__modelo.loadNotes()
 
