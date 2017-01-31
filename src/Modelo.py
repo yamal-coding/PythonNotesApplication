@@ -5,6 +5,9 @@ class Modelo:
 	def __init__(self, database):
 		self.__database = database
 
+	def addObserver(self, observer):
+		self.__observer = observer
+
 	def loadNotes(self):
 		notes = self.__database.loadNotes()
 		#notificar a la vista que se han cargado las notas en la lista notes

@@ -5,9 +5,9 @@ class Observer:
 		pass
 
 	@abstractmethod
-	def onNoteEdited():
+	def onNoteEdited(self, note):
 		pass
 
 	@abstractmethod
-	def onNoteDeleted():
+	def onNoteDeleted(self, id):
 		pass	
