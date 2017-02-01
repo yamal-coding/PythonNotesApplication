@@ -1,13 +1,14 @@
+import abc
 
 class Observer:
-	@abstractmethod
+	@abc.abstractmethod
 	def onNewNote(self, note):
 		pass
 
-	@abstractmethod
+	@abc.abstractmethod
 	def onNoteEdited(self, note):
 		pass
 
-	@abstractmethod
+	@abc.abstractmethod
 	def onNoteDeleted(self, id):
 		pass	

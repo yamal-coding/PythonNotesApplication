@@ -12,18 +12,22 @@ class ConsoleView(Observer):
 		exit = False
 
 		while(not(exit)):
-			printNotes
+			self.printNotes
 
-			option = printOptionsAndReadOption
+			option = self.printOptionsAndReadOption()
 			
 			if (option == 1):#View note
 				#TODO
+				print("view note")
 			elif (option == 2):#Add note
 				#TODO
+				print("add note")
 			elif (option == 3):#Delete note
 				#TODO
+				print("delete note")
 			elif (option == 4):#Edit note
 				#TODO
+				print("edit note")
 			elif (option == 0):#Exit
 				exit = True
 
@@ -34,8 +38,8 @@ class ConsoleView(Observer):
 		exit = False
 		while (not(exit)):
 			print("Options:  1.View  2-Add  3-Delete  4-Edit  0-Exit")
-			option = int(stdin.read(1))
-			if (option == 0 || option == 1 || option == 2 || option == 3 || option == 4):
+			option = int(stdin.readline()[0])
+			if (option == 0 or option == 1 or option == 2 or option == 3 or option == 4):
 				exit = True
 			else:
 				print("Unknown option. Please select a correct value.")
@@ -47,7 +51,7 @@ class ConsoleView(Observer):
 			print(self.__notes[k].getName())
 
 	def onNewNote(self, note):
-		self.__notes.[note.getID()] = note
+		self.__notes[note.getID()] = note
 
 	def onNoteEdited(self, note):
 		del self.__notes[note.getID()]

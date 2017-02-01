@@ -5,7 +5,7 @@ class Controller:
 		self.__modelo = modelo
 
 	def addObserver(self, observer):
-		#TODO
+		self.__modelo.addObserver(observer)
 
 	def loadNotes(self):
 		self.__modelo.loadNotes()
