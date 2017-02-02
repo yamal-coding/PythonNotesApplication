@@ -1,10 +1,11 @@
 from Observer import Observer
 from sys import stdin
+from Note import Note
 
 class ConsoleView(Observer):
 
 	def __init__(self, controller):
-		self.__notes = {}
+		self.__notes = []
 		self.__controller = controller
 		self.__controller.addObserver(self)
 		self.__controller.loadNotes()
@@ -55,8 +56,12 @@ class ConsoleView(Observer):
 		return option
 
 	def printNotes(self):
-		for k in self.__notes.keys():
-			print(self.__notes[k].getName())
+		#for k in self.__notes.keys():
+		#	print(self.__notes[k].getName())
+		i = 1
+		for n in self.__notes:
+			print(str(i) + " - " + n)
+			i += 1
 
 	def onLoadNotes(self, notes):
 		self.__notes = notes
