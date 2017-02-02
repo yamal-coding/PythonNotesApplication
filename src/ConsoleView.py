@@ -7,6 +7,7 @@ class ConsoleView(Observer):
 		self.__notes = {}
 		self.__controller = controller
 		self.__controller.addObserver(self)
+		self.__controller.loadNotes()
 
 	def display(self):
 		exit = False
@@ -57,6 +58,9 @@ class ConsoleView(Observer):
 	def printNotes():
 		for k in self.__notes.keys():
 			print(self.__notes[k].getName())
+
+	def onLoadNotes(self, notes):
+		self.__notes = notes
 
 	def onNewNote(self, note):
 		self.__notes[note.getID()] = note

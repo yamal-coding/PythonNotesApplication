@@ -11,7 +11,7 @@ class Modelo:
 	def loadNotes(self):
 		notes = self.__database.loadNotes()
 		#notificar a la vista que se han cargado las notas en la lista notes
-		return notes
+		self.__observer.onLoadNotes(notes)
 
 	def createNote(self, name, content):
 		newNote = Note(name, content)
