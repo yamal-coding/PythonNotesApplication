@@ -21,13 +21,21 @@ class ConsoleView(Observer):
 				print("view note")
 			elif (option == 2):#Add note
 				#TODO
-				print("add note")
+				print("Enter a name: ")
+				name = stdin.readline()[:-1]
+
+				print("Enter a content: ")
+				content = stdin.readline()[:-1]
+
+				self.__controller.createNote(name, content)
 			elif (option == 3):#Delete note
 				#TODO
 				print("delete note")
+				self.__controller.deleteNote
 			elif (option == 4):#Edit note
 				#TODO
 				print("edit note")
+				self.__controller.editNote
 			elif (option == 0):#Exit
 				exit = True
 
@@ -52,6 +60,7 @@ class ConsoleView(Observer):
 
 	def onNewNote(self, note):
 		self.__notes[note.getID()] = note
+		print("Note added!")
 
 	def onNoteEdited(self, note):
 		del self.__notes[note.getID()]

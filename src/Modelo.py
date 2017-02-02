@@ -17,6 +17,7 @@ class Modelo:
 		newNote = Note(name, content)
 		self.__database.createNote(newNote)
 		#notificar a la vista de que se ha aniadido una nueva nota con exito
+		self.__observer.onNewNote(newNote)
 
 	def deleteNote(self, id):
 		self.__database.deleteNote(id)
