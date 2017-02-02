@@ -13,7 +13,7 @@ class ConsoleView(Observer):
 		exit = False
 
 		while(not(exit)):
-			self.printNotes
+			self.printNotes()
 
 			option = self.printOptionsAndReadOption()
 			
@@ -55,7 +55,7 @@ class ConsoleView(Observer):
 
 		return option
 
-	def printNotes():
+	def printNotes(self):
 		for k in self.__notes.keys():
 			print(self.__notes[k].getName())
 
