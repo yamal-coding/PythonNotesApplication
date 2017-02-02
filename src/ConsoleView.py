@@ -21,7 +21,6 @@ class ConsoleView(Observer):
 				#TODO
 				print("view note")
 			elif (option == 2):#Add note
-				#TODO
 				print("Enter a name: ")
 				name = stdin.readline()[:-1]
 
