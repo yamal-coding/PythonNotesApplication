@@ -6,6 +6,7 @@ class Note:
 			self.__id = name #concatenado con la hora
 		self.__name = name
 		self.__content = content
+		#self.__lastModification
 
 	def getID(self):
 		return self.__id

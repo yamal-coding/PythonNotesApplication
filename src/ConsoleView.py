@@ -1,6 +1,7 @@
 from Observer import Observer
 from sys import stdin
 from Note import Note
+import os
 
 class ConsoleView(Observer):
 
@@ -58,6 +59,7 @@ class ConsoleView(Observer):
 	def printNotes(self):
 		#for k in self.__notes.keys():
 		#	print(self.__notes[k].getName())
+		os.system('cls')
 		i = 1
 		for n in self.__notes:
 			print(str(i) + " - " + n)
