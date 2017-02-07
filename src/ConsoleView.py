@@ -47,8 +47,11 @@ class ConsoleView(Observer):
 			else:
 				print("Please enter an index inside de correct range.")
 
-		print(self.__notes[option].getName())
-		print(self.__notes[option].getContent())
+		os.system('cls')
+		print(self.__notes[option - 1].getName())
+		print(self.__notes[option - 1].getContent())
+		print("\n\n(Enter any character to return to main menu)")
+		option = int(stdin.readline()[0])
 
 	def readAndCreateNote(self):
 		print("Enter a name: ")
