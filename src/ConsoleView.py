@@ -20,16 +20,9 @@ class ConsoleView(Observer):
 			option = self.printOptionsAndReadOption()
 			
 			if (option == 1):#View note
-				#TODO
-				print("view note")
+				self.viewNote()
 			elif (option == 2):#Add note
-				print("Enter a name: ")
-				name = stdin.readline()[:-1]
-
-				print("Enter a content: ")
-				content = stdin.readline()[:-1]
-
-				self.__controller.createNote(name, content)
+				self.readAndCreateNote()
 			elif (option == 3):#Delete note
 				#TODO
 				print("delete note")
@@ -42,6 +35,29 @@ class ConsoleView(Observer):
 				exit = True
 
 		print("Good bye")
+
+
+	def viewNote(self):
+		exit = False
+		while (not(exit)):
+			print("Enter the index of the note you want to see:")
+			option = int(stdin.readline()[0])
+			if (option > 0 and option <= len(self.__notes)):
+				exit = True
+			else:
+				print("Please enter an index inside de correct range.")
+
+		print(self.__notes[option].getName())
+		print(self.__notes[option].getContent())
+
+	def readAndCreateNote(self):
+		print("Enter a name: ")
+		name = stdin.readline()[:-1]
+
+		print("Enter a content: ")
+		content = stdin.readline()[:-1]
+
+		self.__controller.createNote(name, content)
 
 
 	def printOptionsAndReadOption(self):
