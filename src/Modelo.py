@@ -19,9 +19,10 @@ class Modelo:
 		#notificar a la vista de que se ha aniadido una nueva nota con exito
 		self.__observer.onNewNote(newNote)
 
-	def deleteNote(self, id):
+	def deleteNote(self, id, index):
 		self.__database.deleteNote(id)
 		#notificar a la vista de que se ha eliminado la nota de identificador id
+		self.__observer.onNoteDeleted(index)
 
 	def editNote(self, id, name, content):
 		self.__database.editNote(id, name, content)

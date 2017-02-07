@@ -2,6 +2,7 @@ from Observer import Observer
 from sys import stdin
 from Note import Note
 import os
+import time
 
 class ConsoleView(Observer):
 
@@ -24,9 +25,7 @@ class ConsoleView(Observer):
 			elif (option == 2):#Add note
 				self.readAndCreateNote()
 			elif (option == 3):#Delete note
-				#TODO
-				print("delete note")
-				self.__controller.deleteNote
+				self.readAndDeleteNote()
 			elif (option == 4):#Edit note
 				#TODO
 				print("edit note")
@@ -63,6 +62,19 @@ class ConsoleView(Observer):
 		self.__controller.createNote(name, content)
 
 
+	def readAndDeleteNote(self):
+		exit = False
+		while (not(exit)):
+			print("Enter the index of the note you want to delete:")
+			option = int(stdin.readline()[0])
+			if (option > 0 and option <= len(self.__notes)):
+				exit = True
+			else:
+				print("Please enter an index inside de correct range.")
+
+		self.__controller.deleteNote(self.__notes[option - 1].getID(), option - 1)
+
+
 	def printOptionsAndReadOption(self):
 		exit = False
 		while (not(exit)):
@@ -76,8 +88,6 @@ class ConsoleView(Observer):
 		return option
 
 	def printNotes(self):
-		#for k in self.__notes.keys():
-		#	print(self.__notes[k].getName())
 		os.system('cls')
 		i = 1
 		for n in self.__notes:
@@ -89,11 +99,12 @@ class ConsoleView(Observer):
 
 	def onNewNote(self, note):
 		self.__notes.insert(0, note)
-		print("Note added!")
 
 	def onNoteEdited(self, note):
 		del self.__notes[note.getID()]
 		self.__notes[note.getID()] = note
 
-	def onNoteDeleted(self, id):
-		del self.__notes[id]
+	def onNoteDeleted(self, index):
+		del self.__notes[index]
+		print("Note deleted.")
+		time.sleep(2)

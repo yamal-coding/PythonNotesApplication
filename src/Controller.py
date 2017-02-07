@@ -13,8 +13,8 @@ class Controller:
 	def createNote(self, name, content):
 		self.__modelo.createNote(name, content)
 
-	def deleteNote(self, id):
-		self.__modelo.deleteNote(id)
+	def deleteNote(self, id, index):
+		self.__modelo.deleteNote(id, index)
 
 	def editNote(self, id, name, content):
 		self.__modelo.editNote(id, name, content)
