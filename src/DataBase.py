@@ -9,7 +9,7 @@ class DataBase:
 	def loadNotes(self):
 		#this function loads the list of notes from de xml file called self.file
 		#it saves the notes in a dictionary called notes and returns it
-		notes = {}
+		'''notes = {}
 		tree = ET.parse(self.file)
 		root = tree.getroot()
 
@@ -22,6 +22,21 @@ class DataBase:
 
 			notes[id] = newNote
 			#notes.append(newNote)
+
+		return notes'''
+
+		notes = []
+		tree = ET.parse(self.file)
+		root = tree.getroot()
+
+		for child in root:
+			id = child.get('id')
+			name = child.find('name').text
+			content = child.find('content').text
+			
+			newNote = Note(name, content, id)
+
+			notes.append(newNote)
 
 		return notes
 

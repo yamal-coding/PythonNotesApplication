@@ -62,14 +62,14 @@ class ConsoleView(Observer):
 		os.system('cls')
 		i = 1
 		for n in self.__notes:
-			print(str(i) + " - " + n)
+			print(str(i) + " - " + n.getName())
 			i += 1
 
 	def onLoadNotes(self, notes):
 		self.__notes = notes
 
 	def onNewNote(self, note):
-		self.__notes[note.getID()] = note
+		self.__notes.insert(0, note)
 		print("Note added!")
 
 	def onNoteEdited(self, note):

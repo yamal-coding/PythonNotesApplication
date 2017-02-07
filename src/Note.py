@@ -1,3 +1,5 @@
+import time
+
 class Note:
 	def __init__(self, name, content, id=""):
 		if id != "":
@@ -6,7 +8,7 @@ class Note:
 			self.__id = name #concatenado con la hora
 		self.__name = name
 		self.__content = content
-		#self.__lastModification
+		self.__lastModification = time.time() * 1000.0
 
 	def getID(self):
 		return self.__id
