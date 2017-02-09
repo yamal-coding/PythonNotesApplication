@@ -10,18 +10,18 @@ class Modelo:
 
 	def loadNotes(self):
 		notes = self.__database.loadNotes()
-		#notificar a la vista que se han cargado las notas en la lista notes
+		
 		self.__observer.onLoadNotes(notes)
 
 	def createNote(self, name, content):
 		newNote = Note(name, content)
 		self.__database.createNote(newNote)
-		#notificar a la vista de que se ha aniadido una nueva nota con exito
+
 		self.__observer.onNewNote(newNote)
 
 	def deleteNote(self, id, index):
 		self.__database.deleteNote(id)
-		#notificar a la vista de que se ha eliminado la nota de identificador id
+
 		self.__observer.onNoteDeleted(index)
 
 	def editNote(self, id, name, content):

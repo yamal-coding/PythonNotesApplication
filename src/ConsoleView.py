@@ -50,7 +50,7 @@ class ConsoleView(Observer):
 		print(self.__notes[option - 1].getName())
 		print(self.__notes[option - 1].getContent())
 		print("\n\n(Enter any character to return to main menu)")
-		option = int(stdin.readline()[0])
+		option = stdin.readline()[0]
 
 	def readAndCreateNote(self):
 		print("Enter a name: ")

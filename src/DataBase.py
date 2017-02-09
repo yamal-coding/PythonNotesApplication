@@ -7,8 +7,6 @@ class DataBase:
 		self.file = file
 
 	def loadNotes(self):
-		#this function loads the list of notes from de xml file called self.file
-		#it saves the notes in a dictionary called notes and returns it
 		'''notes = {}
 		tree = ET.parse(self.file)
 		root = tree.getroot()
@@ -24,7 +22,8 @@ class DataBase:
 			#notes.append(newNote)
 
 		return notes'''
-
+		#this method loads the list of notes from de xml file called self.file
+		#it saves the notes in a list called notes and returns it
 		notes = []
 		tree = ET.parse(self.file)
 		root = tree.getroot()
@@ -41,7 +40,7 @@ class DataBase:
 		return notes
 
 	def createNote(self, note):
-		#this function creates a new note on the xml file called self.file
+		#this method creates a new note on the xml file called self.file
 		tree = ET.parse(self.file)
 		root = tree.getroot()
 
@@ -53,7 +52,7 @@ class DataBase:
 
 
 	def deleteNote(self, id):
-		#this function deletes a note with the id parameter on the xml file called self.file
+		#this method deletes a note with the id parameter on the xml file called self.file
 		tree = ET.parse(self.file)
 		root = tree.getroot()
 
@@ -66,7 +65,7 @@ class DataBase:
 
 
 	def editNote(self, id, name, content):
-		#this function edits a note with the id parameter on the xml file called self.file changing the old name and content
+		#this method edits a note with the id parameter on the xml file called self.file changing the old name and content
 		#by the new ones
 		tree = ET.parse(self.file)
 		root = tree.getroot()
