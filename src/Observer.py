@@ -6,7 +6,7 @@ class Observer:
 		pass
 
 	@abc.abstractmethod
-	def onNoteEdited(self, note):
+	def onNoteEdited(self, i, note):
 		pass
 
 	@abc.abstractmethod

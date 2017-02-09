@@ -16,5 +16,5 @@ class Controller:
 	def deleteNote(self, id, index):
 		self.__modelo.deleteNote(id, index)
 
-	def editNote(self, id, name, content):
-		self.__modelo.editNote(id, name, content)
+	def editNote(self, i, id, name, content):
+		self.__modelo.editNote(i, id, name, content)

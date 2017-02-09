@@ -10,7 +10,7 @@ class Modelo:
 
 	def loadNotes(self):
 		notes = self.__database.loadNotes()
-		
+
 		self.__observer.onLoadNotes(notes)
 
 	def createNote(self, name, content):
@@ -24,6 +24,7 @@ class Modelo:
 
 		self.__observer.onNoteDeleted(index)
 
-	def editNote(self, id, name, content):
+	def editNote(self, i, id, name, content):
 		self.__database.editNote(id, name, content)
-		#notificar cambios de la nota de identificador id a la vista
+		
+		self.__observer.onNoteEdited(i, Note(name, content, id))
