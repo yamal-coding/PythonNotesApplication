@@ -21,3 +21,21 @@ class Note:
 
 	def __str__(self):
 		return self.__name
+
+	def __lt__(self, other):
+    return self.pages < other
+
+	def ___le__(self, other):
+	    return self.__lastModification <= other.__lastModification
+
+	def __eq__(self, other):
+	    return self.__lastModification == other.__lastModification
+
+	def __ne__(self, other):
+	    return self.__lastModification != other.__lastModification
+
+	def __gt__(self, other):
+	    return self.pages.__lastModification > other.__lastModification
+
+	def __ge__(self, other):
+	    return self.pages.__lastModification >= other.__lastModification
