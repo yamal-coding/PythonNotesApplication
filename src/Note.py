@@ -23,19 +23,37 @@ class Note:
 		return self.__name
 
 	def __lt__(self, other):
-    return self.pages < other
+		if isinstance(other, Note):
+			return self.__lastModification < other.__lastModification
+		else:
+    		return NotImplemented
 
-	def ___le__(self, other):
-	    return self.__lastModification <= other.__lastModification
+    def ___le__(self, other):
+		if isinstance(other, Note):
+	    	return self.__lastModification <= other.__lastModification
+	    else:
+	    	return NotImplemented
 
 	def __eq__(self, other):
-	    return self.__lastModification == other.__lastModification
+		if isinstance(other, Note):
+			return self.__lastModification == other.__lastModification
+		else:
+			return NotImplemented
 
 	def __ne__(self, other):
-	    return self.__lastModification != other.__lastModification
+		if isinstance(other, Note):
+	    	return self.__lastModification != other.__lastModification
+	    else:
+			return NotImplemented
 
 	def __gt__(self, other):
-	    return self.pages.__lastModification > other.__lastModification
+		if isinstance(other, Note):
+	    	return self.pages.__lastModification > other.__lastModification
+	    else:
+			return NotImplemented   
 
 	def __ge__(self, other):
-	    return self.pages.__lastModification >= other.__lastModification
+		if isinstance(other, Note):
+	    	return self.pages.__lastModification >= other.__lastModification
+	    else:
+			return NotImplemented
