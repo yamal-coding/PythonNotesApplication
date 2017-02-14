@@ -26,13 +26,13 @@ class Note:
 		if isinstance(other, Note):
 			return self.__lastModification < other.__lastModification
 		else:
-    		return NotImplemented
+			return NotImplemented
 
-    def ___le__(self, other):
+	def ___le__(self, other):
 		if isinstance(other, Note):
-	    	return self.__lastModification <= other.__lastModification
-	    else:
-	    	return NotImplemented
+			return self.__lastModification <= other.__lastModification
+		else:
+			return NotImplemented
 
 	def __eq__(self, other):
 		if isinstance(other, Note):
@@ -42,18 +42,18 @@ class Note:
 
 	def __ne__(self, other):
 		if isinstance(other, Note):
-	    	return self.__lastModification != other.__lastModification
-	    else:
+			return self.__lastModification != other.__lastModification
+		else:
 			return NotImplemented
 
 	def __gt__(self, other):
 		if isinstance(other, Note):
-	    	return self.pages.__lastModification > other.__lastModification
-	    else:
+			return self.pages.__lastModification > other.__lastModification
+		else:
 			return NotImplemented   
 
 	def __ge__(self, other):
 		if isinstance(other, Note):
-	    	return self.pages.__lastModification >= other.__lastModification
-	    else:
+			return self.pages.__lastModification >= other.__lastModification
+		else:
 			return NotImplemented
