@@ -44,7 +44,7 @@ class ConsoleView(Observer):
 			else:
 				print("Please enter an index inside de correct range.")
 
-		os.system('cls')
+		self.clearScreen()
 		print(self.__notes[option - 1].getName())
 		print(self.__notes[option - 1].getContent())
 		print("\n\n(Enter any character to return to main menu)")
@@ -83,7 +83,7 @@ class ConsoleView(Observer):
 			else:
 				print("Please enter an index inside de correct range.")
 
-		os.system('cls')
+		self.clearScreen
 
 		print("Enter a new name ('$' to skip this step): ")
 		name = stdin.readline()[:-1]
@@ -111,7 +111,7 @@ class ConsoleView(Observer):
 		return option
 
 	def printNotes(self):
-		os.system('cls')
+		self.clearScreen()
 		i = 1
 		for n in self.__notes:
 			print(str(i) + " - " + n.getName())
@@ -137,3 +137,9 @@ class ConsoleView(Observer):
 		del self.__notes[index]
 		print("Note deleted.")
 		time.sleep(2)
+
+	def clearScreen(self):
+		if os.name == 'nt':
+			os.system('cls')
+		else:
+			os.system('clear')
